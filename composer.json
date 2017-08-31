@@ -1,0 +1,49 @@
+{
+  "name": "alpipego/wp-template-presentation",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "johnpbloch/wordpress-core": "^4.8",
+    "johnpbloch/wordpress-core-installer": "^1.0",
+    "composer/installers": "^1.4",
+    "wp-hibou/template": "^0.3.1@dev",
+    "wpackagist-plugin/disable-wordpress-updates": "^1.6",
+    "wpackagist-plugin/sqlite-integration": "^1.8",
+    "wpackagist-plugin/wp-example-content": "^1.3"
+  },
+  "license": "MIT",
+  "extra": {
+    "wordpress-install-dir": "web/wp",
+    "installer-paths": {
+      "web/wp-content/must-use/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "dropin-paths": {
+      "web/wp-content/languages/": [
+        "vendor:koodimonni-language"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "Alexander Goller",
+      "email": "alpipego@gmail.com",
+      "homepage": "https://alpipego.com",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/alpipego/wp-template-presentation",
+  "prefer-stable": true
+}

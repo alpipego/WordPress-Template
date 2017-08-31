@@ -1,0 +1,4 @@
+vendor/
+web/wp
+web/wp-content/plugins
+!index.php
