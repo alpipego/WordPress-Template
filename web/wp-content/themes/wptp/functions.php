@@ -27,16 +27,6 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 } );
 
-add_filter( 'template_include', function ( string $template ) {
-	add_action( 'wp_footer', function () use ( $template ) {
-		echo '<code><pre>';
-		var_dump( str_replace( realpath( __DIR__ . '/../' ), '', realpath( $template ) ) );
-		echo '</pre></code>';
-	} );
-
-	return $template;
-} );
-
 add_action( 'wp_ajax_wptp_switch_theme', function () {
 	if ( wp_verify_nonce( $_REQUEST['_wpnonce'], sanitize_text_field( $_REQUEST['action'] ) ) ) {
 		if ( is_child_theme() ) {
