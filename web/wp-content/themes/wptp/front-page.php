@@ -6,6 +6,4 @@
  * Time: 12:37
  */
 
-//get_header();
-include __DIR__ . '/../../../../../basic.html';
-//get_footer();
+include ABSPATH . '../../slides.html';

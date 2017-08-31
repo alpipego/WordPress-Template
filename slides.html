@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Basic Example</title>
+  <style type="text/css">
+    @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Hind:400,500,600,700,300);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);body{font-family:Open Sans,sans-serif;font-weight:300;font-size:100%;color:#191919;background-color:#000}h1,h2,h3{font-family:Hind,sans-serif;font-weight:500}h1{font-size:300%}h1,h2{text-align:center;line-height:1.2}h2{margin:5px 0;font-size:100%;font-weight:200}h3{margin:0;padding-bottom:15px;font-size:140%;line-height:1.2;border-bottom:1px ridge #191919}ul{font-weight:200;line-height:1.375;padding:20px 0 0 60px}blockquote{padding-left:20px;margin-left:0;background:#efefef;border-left:5px solid #272822;border-radius:0 3px 3px 0}blockquote p{padding:.5em;color:#272822}a{text-decoration:none}a,a:hover{color:#1db4d0}a:hover{border-bottom:1px solid #1db4d0}pre{overflow-x:auto}code{padding:.1em .35em;font-family:Inconsolata,monospace}pre code{font-family:Inconsolata,monospace;font-weight:400;overflow-y:hidden}.hljs,pre code{display:block;padding:.5em;overflow-x:auto;background:#002b36;color:#839496}.hljs-comment,.hljs-quote{color:#586e75}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#073642}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}img.badge{height:128px;width:128px!important;border-radius:50%!important}h1{margin:170px 0 0}.slides{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.slides.active .slide:not(.hidden){border:22px solid red}.slide-overlay{position:absolute;top:0;left:0;width:100%;height:100%;z-index:4;cursor:pointer;display:none}.slides.active .slide:hover .slide-overlay:before{content:"▶";text-align:center;line-height:300px;font-size:200px;color:#fff;position:absolute;width:300px;height:300px;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.slides.active .slide:hover .slide-overlay{display:block;background:rgba(0,0,0,.5)}.slide-wrapper{margin:7px;transition:all .25s}.slide{right:0;bottom:0;display:-ms-grid;display:grid;-ms-grid-columns:20vw auto 20vw;grid-template-columns:20vw auto 20vw;-ms-grid-rows:20vh auto 10vh;grid-template-rows:20vh auto 10vh;grid-template-areas:". . ." ". a ." "b b b";overflow:hidden;box-sizing:border-box;background-color:#fff}.slide,.slide:before{position:absolute;top:0;left:0;z-index:1}.slide:before{content:" ";width:100%;height:100%;opacity:.4;background:url(../assets/pattern.svg) 50% no-repeat;background-size:cover}.slide-content{grid-area:a;justify-self:center;position:relative;z-index:2;opacity:1;padding:0;font-size:200%;width:100%;max-width:1200px;font-weight:200;line-height:1.375;overflow:hidden}.slide-content img{width:100%;border-radius:3px}.controls{position:absolute;bottom:10px;right:10px;z-index:3}.overview{display:inline-block;float:left;color:#c7c7c7;margin-right:15px;font-weight:700;font-size:30px;line-height:30px;cursor:pointer}.overview:hover{color:#1db4d0}.arrow{float:left;height:0;width:0;margin-right:15px;border:15px solid #c7c7c7;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.prev{border-right-width:25px;border-left-color:transparent;border-left-width:0}.next,.prev{border-top-color:transparent;border-bottom-color:transparent}.next{border-right-color:transparent;border-right-width:0;border-left-width:25px}.prev:hover{border-right-color:#1db4d0;cursor:pointer}.next:hover{border-left-color:#1db4d0;cursor:pointer}.left{float:left;width:48%}.right{float:right;width:48%}.author h1{margin-bottom:30px;font-size:170%;font-weight:200;text-align:center}.author h3{font-size:95%;font-weight:100;text-align:center;border:none}.author h3.twitter:before{content:"Twitter: "}.author h3.github:before{content:"Github: "}.author h3.email:before{content:"Email: "}.author h3.url:before{content:"Web: "}hr{border:1px solid #272822}pre{font-size:75%;line-height:1.3}table td,table th{padding-right:3em;text-align:left}.progress{position:fixed;top:0;right:0;left:0;height:3px;z-index:2}.progress-bar{height:3px;width:0;background-color:#1db4d0;transition:width .15s ease-out}.hidden{display:none}code.lang-bash-blank,code.lang-bash-blank-small{background:#000;color:#fff!important}code.lang-bash-blank-small{font-size:.45em}kbd{display:inline-block;padding:3px 5px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:6px;box-shadow:inset 0 -4px 0 #bbb}@media (min-width:820px){.slide-content{min-width:800px}}@media (max-width:850px){body{font-size:70%}.slide{padding:50px}.slide-content{width:auto}img{width:100%;border-radius:3px}h1{margin-top:120px}.prev,.prev:hover{border-right-color:hsla(0,0%,53%,.5)}.next,.next:hover{border-left-color:hsla(0,0%,53%,.5)}}@media (max-width:480px){body{overflow:hidden;font-size:50%}.slide{padding:10px}.slide-content{height:340px;padding:10px;margin-top:10px}h1{margin-top:50px}ul{padding-left:25px}}@media print{*{-webkit-print-color-adjust:exact}@page{size:letter}.hidden{display:inline}html{height:100%;width:100%;overflow:visible}body{float:none!important;padding:0;margin:0 auto!important;overflow:visible;font-size:52%;background:none!important;border:0}.controls,.progress{display:none}.slide{position:static}.slide-content{margin-top:0;margin-bottom:40px;height:3.5in;overflow:visible;border:1px solid #222}.slide:nth-child(2n){page-break-before:always}}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjc3Mvc3R5bGUuc2NzcyIsInNjc3MvX2dsb2JhbC5zY3NzIiwic2Nzcy9fc29sYXJpemVkLWRhcmsuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFnREEsaUJBWUMsQUM1REQsOEVBQVksQUFDWiwrRUFBWSxBQUNaLHlFQUFZLEFBR1osS0FDSSxpQ0FBb0MsQUFDcEMsZ0JBQWdCLEFBQ2hCLGVBQWUsQUFDZixjQUFjLEFBQ2QscUJBQXNCLENBQ3pCLEFBRUQsU0FHSSw0QkFBK0IsQUFDL0IsZUFBZ0IsQ0FDbkIsQUFFRCxHQUNJLGNBQWUsQ0FHbEIsQUFFRCxNQUpJLGtCQUFrQixBQUNsQixlQUFnQixDQVNuQixBQU5ELEdBQ0ksYUFBYSxBQUNiLGVBQWUsQUFDZixlQUFnQixDQUduQixBQUVELEdBQ0ksU0FBUyxBQUNULG9CQUFvQixBQUNwQixlQUFlLEFBQ2YsZ0JBQWdCLEFBQ2hCLCtCQUFnQyxDQUNuQyxBQUVELEdBQ0ksZ0JBQWdCLEFBQ2hCLGtCQUFrQixBQUNsQixxQkFBc0IsQ0FDekIsQUFFRCxXQUNJLGtCQUFrQixBQUNsQixjQUFjLEFBQ2QsbUJBQW1CLEFBQ25CLDhCQUE4QixBQUM5Qix5QkFBMEIsQ0FLN0IsQUFWRCxhQU9RLGFBQWEsQUFDYixhQUFjLENBQ2pCLEFBR0wsRUFDSSxvQkFBcUIsQ0FNeEIsQUFQRCxVQUVJLGFBQWMsQ0FJYixBQU5MLFFBS1EsK0JBQWdDLENBQ25DLEFBSUwsSUFDSSxlQUFnQixDQUNuQixBQUNELEtBQ0ksbUJBQW1CLEFBQ25CLGlDQUFxQyxDQUd4QyxBQUVELFNBR0ksa0NBQXFDLEFBQ3JDLGdCQUFnQixBQUNoQixpQkFBa0IsQ0FJckIsQUNuRkQsZUQyRUksY0FBYyxBQUNkLGFBQWEsQUFJYixnQkFBZ0IsQUFDaEIsbUJBQW1CLEFBQ25CLGFBQWMsQ0M1RWpCLEFBRUQsMEJBRUUsYUFBYyxDQUNmLEFBR0QsZ0RBR0UsYUFBYyxDQUNmLEFBR0QsK0ZBTUUsYUFBYyxDQUNmLEFBR0QsNEVBS0Us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RUQsMEJBQ0UsbUJBQW9CLENBQ3JCLEFBRUQseUJBQ0Usa0JBQW1CLENBQ3BCLEFBRUQsd0JBQ0UsaUJBQWtCLENBQ25CLEFBRUQsc0JBQ0UsZUFBZ0IsQ0FDakIsQUFFRCxHQUNFLHdCQUF5QixDQUMxQixBQUVELElBQ0UsY0FBYyxBQUNkLGVBQWdCLENBQ2pCLEFBRUQsa0JBRUUsa0JBQWtCLEFBQ2xCLGVBQWdCLENBQ2pCLEFBRUQsVUFDRSxlQUFlLEFBQ2YsTUFBTSxBQUNOLFFBQVEsQUFDUixPQUFPLEFBQ1AsV0FBVyxBQUNYLFNBQVUsQ0FDWCxBQUVELGNBQ0UsV0FBVyxBQUNYLFFBQVEsQUFDUix5QkFBeUIsQUFJekIsOEJBQStCLENBQ2hDLEFBRUQsUUFDRSxZQUFhLENBQ2QsQUFZRCxnREFKRSxnQkFBZ0IsQUFDaEIsb0JBQXNCLENBT3ZCLEFBSkQsMkJBR0UsZUFBaUIsQ0FDbEIsQUFFRCxJQUNFLHFCQUFxQixBQUNyQixnQkFBZ0IsQUFDaEIsV0FBVyxBQUNYLHNCQUFzQixBQUN0Qix5QkFBeUIsQUFDekIsc0JBQXNCLEFBQ3RCLHlCQUF5QixBQUN6QixrQkFBa0IsQUFDbEIsOEJBQStCLENBQ2hDLEFBbExDLHlCQWJGLGVBY0ksZUFBZ0IsQ0FFbkIsQ0FBQSxBQWtMRCx5QkFDRSxLQUNFLGFBQWMsQ0FDZixBQUVELE9BQ0UsWUFBYSxDQUNkLEFBRUQsZUFDRSxVQUFXLENBQ1osQUFFRCxJQUNFLFdBQVcsQUFDWCxpQkFBa0IsQ0FDbkIsQUFFRCxHQUNFLGdCQUFpQixDQUNsQixBQUVELGtCQUVFLG9DQUEyQyxDQUM1QyxBQUVELGtCQUVFLG1DQUEwQyxDQUMzQyxDQUFBLEFBR0gseUJBQ0UsS0FDRSxnQkFBZ0IsQUFDaEIsYUFBYyxDQUNmLEFBRUQsT0FDRSxZQUFhLENBQ2QsQUFDRCxlQUNFLGFBQWEsQUFDYixhQUFhLEFBQ2IsZUFBZ0IsQ0FDakIsQUFFRCxHQUNFLGVBQWdCLENBQ2pCLEFBRUQsR0FDRSxpQkFBa0IsQ0FDbkIsQ0FBQSxBQUdILGFBQ0UsRUFDRSxnQ0FBaUMsQ0FDbEMsQUFFRCxNQUNFLFdBQVksQ0FBQSxBQUdkLFFBQ0UsY0FBZSxDQUNoQixBQUVELEtBQ0UsWUFBWSxBQUNaLFdBQVcsQUFDWCxnQkFBaUIsQ0FDbEIsQUFFRCxLQUNFLHFCQUFzQixBQUN0QixVQUFVLEFBQ1Ysd0JBQXlCLEFBQ3pCLGlCQUFpQixBQUNqQixjQUFjLEFBQ2QsMEJBQTJCLEFBQzNCLFFBQVMsQ0FDVixBQUVELG9CQUVFLFlBQWEsQ0FDZCxBQUVELE9BQ0UsZUFBZ0IsQ0FDakIsQUFFRCxlQUNFLGFBQWEsQUFDYixtQkFBbUIsQUFDbkIsYUFBYSxBQUNiLGlCQUFpQixBQUNqQixxQkFBc0IsQ0FFdkIsQUFFRCxxQkFFRSx3QkFBeUIsQ0FDMUIsQ0FBQSIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbCxudWxsXX0= */
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+<div class="slides">
+    <div class="slide-wrapper">
+      <div class="slide" id="slide-1">
+        <div data-id="1" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="templates-in-wordpress">Templates in WordPress</h1>
+<h2 id="wiederverwendbare-templates-f-r-js-und-php">Wiederverwendbare Templates für JS und PHP</h2>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-2">
+        <div data-id="2" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="locate-template">Locate Template</h1>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-3">
+        <div data-id="3" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="locate-template">Locate Template</h3>
+<pre><code class="lang-php"><span class="hljs-comment">/**
+ * Retrieve the name of the highest priority template file that exists.
+ *
+ * Searches in the STYLESHEETPATH before TEMPLATEPATH and wp-includes/theme-compat
+ * so that themes which inherit from a parent theme can just overload one file.
+ *
+ * <span class="hljs-doctag">@since</span> 2.7.0
+ *
+ * <span class="hljs-doctag">@param</span> string|array $template_names Template file(s) to search for, in order.
+ * <span class="hljs-doctag">@param</span> bool         $load           If true the template file will be loaded if it is found.
+ * <span class="hljs-doctag">@param</span> bool         $require_once   Whether to require_once or require. 
+ *                                     Default true. Has no effect if $load is false.
+ * <span class="hljs-doctag">@return</span> string The template filename if one is located.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">locate_template</span><span class="hljs-params">($template_names, $load = false, $require_once = true )</span></span></code></pre>
+<p><a href="https://codex.wordpress.org/Function_Reference/locate_template">https://codex.wordpress.org/Function_Reference/locate_template</a></p>
+<p><code>wp-includes/template.php:629-650</code></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-4">
+        <div data-id="4" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="locate-template">Locate Template</h3>
+<h4 id="parent-theme">Parent Theme</h4>
+<pre><code>parent-theme
+│   home.php
+│   ...    
+│
+└───partials 
+    |   single.php
+    │   tmpl-single.php</code></pre>
+<h4 id="child-theme">Child Theme</h4>
+<pre><code>child-theme
+|
+└───partials
+    |   single.php
+    |   index-single.php</code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-5">
+        <div data-id="5" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="locate-template">Locate Template</h3>
+<pre><code>parent-theme
+│   home.php
+│   ...    
+│
+└───partials 
+    |   single.php
+    │   tmpl-single.php</code></pre>
+<pre><code>child-theme
+|
+└───partials
+    |   single.php
+    |   index-single.php</code></pre>
+<pre><code class="lang-php">locate_template( [ 
+    <span class="hljs-string">'partials/i-dont-exist.php'</span>, 
+    <span class="hljs-string">'partials/index-single.php'</span>, 
+    <span class="hljs-string">'partials/single.php'</span>, 
+] );</code></pre>
+<p><a href="/index.php/hello-world/" target="_blank">&rarr;</a></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-6">
+        <div data-id="6" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="wp-template">wp.template</h1>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-7">
+        <div data-id="7" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="wp-template">wp.template</h3>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * wp.template( id )
+ *
+ * Fetch a JavaScript template for an id, and return a templating function for it.
+ *
+ * @param  {string} id   A string that corresponds to a DOM element with an id prefixed with "tmpl-".
+ *                       For example, "attachment" maps to "tmpl-attachment".
+ * @return {function}    A function that lazily-compiles the template requested.
+ */</span></code></pre>
+<pre><code>Interpolate (unescaped): {{{ }}}
+Interpolate (escaped): {{ }}
+Evaluate: &lt;# #&gt;</code></pre>
+<p><a href="https://codex.wordpress.org/Javascript_Reference/wp.template">https://codex.wordpress.org/Javascript_Reference/wp.template</a></p>
+<p><code>wp-includes/js/wp-util.js:17-36</code></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-8">
+        <div data-id="8" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="wp-template">wp.template</h3>
+<p>WP Util (<code>wp-util.js</code>, <code>underscore.js</code>, <code>jquery-core.js</code>, <code>jquery-migrate.js</code>)</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/html"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tmpl-post"</span>&gt;</span><span class="handlebars"><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"post"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span></span><span class="hljs-template-variable">{{ data.title }}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{{ data.content }}</span><span class="xml">}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        ...
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-9">
+        <div data-id="9" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="how-not-to-do-it">How not to do it</h1>
+<h2 id="-a-href-index-php-how-not-to-do-it-target-_blank-examples-a-"><a href="/index.php/how-not-to-do-it/" target="_blank">Examples</a></h2>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-10">
+        <div data-id="10" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="putting-stuff-together">Putting stuff together</h1>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-11">
+        <div data-id="11" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="putting-stuff-together">Putting stuff together</h3>
+<h4 id="-partials-single-php-"><code>partials/single.php</code></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"<span class="php"><span class="hljs-meta">&lt;?</span>= get_the_permalink(); <span class="hljs-meta">?&gt;</span></span>"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-title"</span>&gt;</span>
+            <span class="php"><span class="hljs-meta">&lt;?</span>= get_the_title(); <span class="hljs-meta">?&gt;</span></span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> ( get_the_date( <span class="hljs-string">'U'</span> ) &gt; time() - <span class="hljs-number">24</span> * <span class="hljs-number">3600</span> ) : <span class="hljs-meta">?&gt;</span></span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-newmarker"</span>&gt;</span>NEW!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span></span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-excerpt"</span>&gt;</span>
+        <span class="php"><span class="hljs-meta">&lt;?</span>= get_the_excerpt(); <span class="hljs-meta">?&gt;</span></span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-12">
+        <div data-id="12" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="putting-stuff-together">Putting stuff together</h3>
+<h4 id="-partials-tmpl-single-php-"><code>partials/tmpl-single.php</code></h4>
+<pre><code class="lang-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{{ data.permalink }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-title"</span>&gt;</span>
+            </span><span class="hljs-template-variable">{{{ data.title }}</span><span class="xml">}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">#</span> <span class="hljs-attr">if</span> ( <span class="hljs-attr">data.published</span> &lt; <span class="hljs-attr">data.timestamp</span> <span class="hljs-attr">-</span> <span class="hljs-attr">24</span> * <span class="hljs-attr">3600</span> ) { #&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-newmarker"</span>&gt;</span>NEW!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">#</span> } #&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-excerpt"</span>&gt;</span>
+        </span><span class="hljs-template-variable">{{{ data.excerpt }}</span><span class="xml">}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-13">
+        <div data-id="13" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="putting-stuff-together">Putting stuff together</h3>
+<pre><code class="lang-php"><span class="hljs-keyword">while</span> ( have_posts() ) {
+    the_post();
+
+    <span class="hljs-keyword">require</span> locate_template( [ <span class="hljs-string">'partials/index-single.php'</span>, <span class="hljs-string">'partials/single.php'</span> ] );
+}</code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-14">
+        <div data-id="14" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="putting-stuff-together">Putting stuff together</h3>
+<pre><code class="lang-php"><span class="hljs-keyword">while</span> ( have_posts() ) {
+    the_post();
+
+    <span class="hljs-keyword">require</span> locate_template( [ <span class="hljs-string">'partials/index-single.php'</span>, <span class="hljs-string">'partials/single.php'</span> ] );
+}</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/html"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tmpl-single"</span>&gt;</span><span class="handlebars"><span class="xml">
+    <span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">require</span> locate_template( [ <span class="hljs-string">'partials/tmpl-single.php'</span> ] ); <span class="hljs-meta">?&gt;</span></span>
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-15">
+        <div data-id="15" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="putting-stuff-together">Putting stuff together</h3>
+<pre><code class="lang-php"><span class="hljs-keyword">while</span> ( have_posts() ) {
+    the_post();
+
+    <span class="hljs-keyword">require</span> locate_template( [ <span class="hljs-string">'partials/index-single.php'</span>, <span class="hljs-string">'partials/single.php'</span> ] );
+}</code></pre>
+<pre><code>
+&lt;script type=&quot;text/html&quot; id=&quot;tmpl-single&quot;&gt;
+    &lt;?php require locate_template( [ &#39;partials/index-single.php&#39;, &#39;partials/single.php&#39; ] ); ?&gt;
+&lt;/script&gt;</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// on button click get ajax data from server</span>
+
+<span class="hljs-keyword">var</span> container = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'post-container'</span>),
+    template = wp.template(<span class="hljs-string">'single'</span>),
+    data = {
+        permalink: response.permalink,
+        title: response.title,
+        timestamp: response.timestamp,
+        excerpt: response.excerpt,
+    };
+container.insertAdjacentHTML(<span class="hljs-string">'beforeend'</span>, template(data));</code></pre>
+<p><a href="/index.php/blog/" target="_blank">&rarr;</a></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  " id="slide-16">
+        <div data-id="16" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="reusing-templates">Reusing Templates</h1>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-17">
+        <div data-id="17" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="reusing-templates">Reusing Templates</h3>
+<p><code>wp-hibou/template</code>: <a href="https://github.com/wp-hibou/template/">https://github.com/wp-hibou/template/</a></p>
+<pre><code class="lang-php"><span class="hljs-comment">/**
+ * Template constructor.
+ *
+ * <span class="hljs-doctag">@param</span> array $template Uses `locate_template` to prioritize templates
+ * <span class="hljs-doctag">@param</span> string $name ID passed to `wp.template`
+ * <span class="hljs-doctag">@param</span> array $data optional array of unchanging data
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(array $template, string $name, array $data = [])</span></span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-18">
+        <div data-id="18" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="reusing-templates">Reusing Templates</h3>
+<p><code>wp-hibou/template</code>: <a href="https://github.com/wp-hibou/template/">https://github.com/wp-hibou/template/</a></p>
+<pre><code class="lang-php"><span class="hljs-comment">/**
+ * Template constructor.
+ *
+ * <span class="hljs-doctag">@param</span> array $template Uses `locate_template` to prioritize templates
+ * <span class="hljs-doctag">@param</span> string $name ID passed to `wp.template`
+ * <span class="hljs-doctag">@param</span> array $data optional array of unchanging data
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(array $template, string $name, array $data = [])</span></span></code></pre>
+<pre><code class="lang-php"><span class="hljs-comment">/**
+ * Pass data to method to render PHP, leave empty for JS template
+ * 
+ * <span class="hljs-doctag">@uses</span> renderJs
+ * <span class="hljs-doctag">@uses</span> renderPhp
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span><span class="hljs-params">(array $data = null)</span></span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-19">
+        <div data-id="19" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="reusing-templates">Reusing Templates</h3>
+<h4 id="-child-partials-index-single-php-"><code>child/partials/index-single.php</code></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"<span class="php"><span class="hljs-meta">&lt;?</span>= $data[<span class="hljs-string">'permalink'</span>]; <span class="hljs-meta">?&gt;</span></span>"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-title"</span>&gt;</span>
+            <span class="php"><span class="hljs-meta">&lt;?</span>= $data[<span class="hljs-string">'title'</span>]; <span class="hljs-meta">?&gt;</span></span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> ( $data[<span class="hljs-string">'published'</span>] &gt; $data[<span class="hljs-string">'timestamp'</span>] - <span class="hljs-number">24</span> * <span class="hljs-number">3600</span> ) : <span class="hljs-meta">?&gt;</span></span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-newmarker"</span>&gt;</span>NEW!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span></span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"single-post-excerpt"</span>&gt;</span>
+        <span class="php"><span class="hljs-meta">&lt;?</span>= $data[<span class="hljs-string">'excerpt'</span>]; <span class="hljs-meta">?&gt;</span></span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-20">
+        <div data-id="20" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="reusing-templates">Reusing Templates</h3>
+<h4 id="-child-home-php-"><code>child/home.php</code></h4>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">WPHibou</span>\<span class="hljs-title">Template</span>\<span class="hljs-title">Template</span>;
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@var</span> Template $tmpl */</span>
+$tmpl = <span class="hljs-keyword">new</span> Template( [ <span class="hljs-string">'partials/index-single.php'</span> ], <span class="hljs-string">'single'</span> );
+$tmpl-&gt;render();
+
+...
+
+    <span class="hljs-keyword">while</span> ( have_posts() ) {
+        the_post();
+
+        $tmpl-&gt;render( [
+            <span class="hljs-string">'permalink'</span> =&gt; get_the_permalink(),
+            <span class="hljs-string">'title'</span>     =&gt; get_the_title(),
+            <span class="hljs-string">'published'</span> =&gt; get_the_date( <span class="hljs-string">'U'</span> ),
+            <span class="hljs-string">'excerpt'</span>   =&gt; get_the_excerpt(),
+            <span class="hljs-string">'timestamp'</span> =&gt; time(),
+        ] );
+    }
+
+...</code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-21">
+        <div data-id="21" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="reusing-templates">Reusing Templates</h3>
+<pre><code class="lang-js">...
+
+wp.ajax.send({data: formData})
+    .done(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+        <span class="hljs-keyword">var</span> tmpl = wp.template(<span class="hljs-string">'single'</span>),
+            post = tmpl(response);
+
+        $(<span class="hljs-string">'#post-container'</span>).append(post);
+        <span class="hljs-comment">// update the offset</span>
+        <span class="hljs-keyword">var</span> $offset = $(<span class="hljs-string">'[name="offset"]'</span>);
+        $offset.val(<span class="hljs-built_in">parseInt</span>($offset.val(), <span class="hljs-number">10</span>) + <span class="hljs-number">1</span>);
+    })
+    .fail(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+        <span class="hljs-comment">// handle fail state</span>
+    });
+
+...</code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-22">
+        <div data-id="22" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="further-reading">Further Reading</h3>
+<h4 id="function-reference">Function Reference</h4>
+<ul>
+<li><a href="https://codex.wordpress.org/Javascript_Reference/wp.template">https://codex.wordpress.org/Javascript_Reference/wp.template</a></li>
+<li><a href="https://codex.wordpress.org/Function_Reference/locate_template">https://codex.wordpress.org/Function_Reference/locate_template</a></li>
+</ul>
+<h4 id="inspiration">Inspiration</h4>
+<ul>
+<li><a href="https://gist.github.com/nikolov-tmw/8059ca8f1f5e0678be49">https://gist.github.com/nikolov-tmw/8059ca8f1f5e0678be49</a></li>
+<li><a href="http://www.workingsoftware.com.au/page/Your_templating_engine_sucks_and_everything_you_have_ever_written_is_spaghetti_code_yes_you">http://www.workingsoftware.com.au/page/Your_templating_engine_sucks_and_everything_you_have_ever_written_is_spaghetti_code_yes_you</a></li>
+</ul>
+<h4 id="how-to">How to</h4>
+<ul>
+<li><a href="https://themehybrid.com/weblog/intro-to-underscore-js-templates-in-wordpress">https://themehybrid.com/weblog/intro-to-underscore-js-templates-in-wordpress</a></li>
+<li><a href="https://zao.is/blog/2017/03/22/how-to-use-wp-template/">https://zao.is/blog/2017/03/22/how-to-use-wp-template/</a></li>
+</ul>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden author-slide" id="slide-23">
+        <div data-id="23" class="slide-overlay"></div>
+        <section class="slide-content"><div class="author">
+  <h1 class="name">Alexander Goller</h1>
+    <h3 class="twitter">
+      <a href="http://twitter.com/@alpipego">@alpipego</a>
+    </h3>
+    <h3 class="github">
+      <a href="https://github.com/https://github.com/alpipego">https://github.com/alpipego</a>
+    </h3>
+    <h3 class="url">
+      <a href="https://alexandergoller.com/">https://alexandergoller.com/</a>
+    </h3>
+</div>
+</section>
+      </div>
+    </div>
+</div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="overview">☷</div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    function currentPosition(){return parseInt(document.querySelector(".slide:not(.hidden)").id.slice(6))}function navigate(a){var b=currentPosition(),c=document.getElementsByClassName("slide").length,d=document.querySelectorAll("#slide-"+b+" .fragment"),e=!1;if(d.length)if(a>0){var f=document.querySelectorAll("#slide-"+b+" .fragment.hidden");f.length?f[0].classList.remove("hidden"):e=!0}else{var f=document.querySelectorAll("#slide-"+b+" .fragment:not(.hidden)");f.length?f[f.length-1].classList.add("hidden"):e=!0}else e=!0;if(e){var g=(b-1+a)%c+1;g=(g-1+c)%c+1,document.getElementById("slide-"+b).classList.add("hidden"),document.getElementById("slide-"+g).classList.remove("hidden"),updateProgress(),updateURL(),updateTabIndex()}}function updateURL(){try{window.history.replaceState({},null,"#"+currentPosition())}catch(a){window.location.hash=currentPosition()}}function updateProgress(){var a=document.querySelector(".progress-bar");if(null!==a){var b=document.getElementsByClassName("slide").length,c=currentPosition()-1,d=1===b?100:100*c/(b-1);a.style.width=d.toString()+"%"}}function updateTabIndex(){var a,b=document.querySelectorAll(".slide a"),c=currentPosition(),d=document.getElementById("slide-"+c).querySelectorAll("a");for(a=0;a<b.length;a++)b[a].setAttribute("tabindex",-1);for(a=0;a<d.length;a++)d[a].removeAttribute("tabindex")}function isFullScreen(){return document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement}function toggleFullScreen(){var a=document.documentElement,b=document;a.requestFullscreen=a.requestFullscreen||a.msRequestFullscreen||a.mozRequestFullScreen||a.webkitRequestFullscreen.bind(a,Element.ALLOW_KEYBOARD_INPUT),b.exitFullscreen=b.exitFullscreen||b.msExitFullscreen||b.mozCancelFullScreen||b.webkitExitFullscreen,isFullScreen()?b.exitFullscreen():a.requestFullscreen()}function toggleOverview(){if(void 0!==window.$style)window.$style.remove(),delete window.$style,document.querySelector(".slides").classList.remove("active");else{var a=document.querySelector(".slides");a.classList.add("active");var b=(document.querySelectorAll(".slide-wrapper"),window),c=document,d=c.documentElement,e=c.getElementsByTagName("body")[0],f=b.innerWidth||d.clientWidth||e.clientWidth,g=b.innerHeight||d.clientHeight||e.clientHeight;window.$style=document.createElement("style"),window.$style.innerHTML=".slide-wrapper {width: "+.25*f+"px; height: "+.25*g+"px; } body .slide {width: "+f+"px; height: "+g+"px; position: relative; transform: scale(0.25,0.25); transform-origin: 0 0; } .slide.hidden{display: block; }",document.getElementsByTagName("head")[0].appendChild(window.$style)}}document.addEventListener("DOMContentLoaded",function(){updateTabIndex();var a=window.location.hash.slice(1);a&&navigate(parseInt(a)-1),document.onkeydown=function(a){if("textarea"!==a.target.tagName.toLowerCase()){var b=a.keyCode;37===b||40===b||8===b||72===b||74===b||33===b?navigate(-1):38===b||39===b||32===b||75===b||76===b||34===b?navigate(1):13===b?toggleFullScreen():27===b&&toggleOverview()}},document.querySelector(".next")&&document.querySelector(".prev")&&(document.querySelector(".next").onclick=function(a){a.preventDefault(),navigate(1)},document.querySelector(".prev").onclick=function(a){a.preventDefault(),navigate(-1)}),document.querySelector(".overview")&&(document.querySelector(".overview").onclick=function(a){toggleOverview()});var b=document.querySelectorAll(".slide-overlay");[].forEach.call(b,function(a){a.onclick=function(a){navigate(parseInt(a.target.dataset.id)-currentPosition()),toggleOverview()}});var c=document.querySelectorAll(".fragment");[].forEach.call(c,function(a){a.classList.add("hidden")})});
+//# sourceMappingURL=script.js.map
+  </script>
+</body>
+</html>
