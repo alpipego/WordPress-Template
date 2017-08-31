@@ -20,7 +20,7 @@
 
 define( 'USE_MYSQL', false );
 define( 'DB_FILE', 'wp' );
-define( 'DB_DIR', '/Users/alpipego/Sites/template/wordpress/database' );
+define( 'DB_DIR', __DIR__ .'/database' );
 
 
 define( 'DB_NAME', 'database_name_here' );
